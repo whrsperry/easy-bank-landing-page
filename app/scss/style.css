@@ -1,3 +1,35 @@
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -40,6 +72,7 @@ button, .button {
   border: none;
   cursor: pointer;
   color: hsl(0deg, 0%, 100%);
+  font-size: 0.875rem;
 }
 
 @media (max-width: 39.9375em) {
@@ -54,8 +87,33 @@ button, .button {
   }
 }
 
+.header.open .overlay {
+  display: block;
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+.header.open .header__menu > span:first-child {
+  transform: rotate(45deg);
+}
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header__menu > span:last-child {
+  transform: rotate(-45deg);
+}
+.header .overlay {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 3.75rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(hsl(233deg, 26%, 24%), transparent);
+}
 .header nav {
   padding: 1.0625rem 1.5rem;
+  position: relative;
 }
 .header__logo img {
   width: 8.8125rem;
@@ -64,13 +122,16 @@ button, .button {
 .header__menu > span {
   display: block;
   width: 26px;
-  height: 2px;
+  height: 3px;
   background-color: hsl(233deg, 26%, 24%);
+  transition: all 300ms ease-in-out;
+  transform-origin: 4px 1px;
 }
 .header__menu > span:not(:last-child) {
   margin-bottom: 3px;
 }
 .header__links a {
+  position: relative;
   font-size: 0.75rem;
   color: hsl(233deg, 8%, 62%);
   transition: 200ms ease-in-out;
@@ -78,6 +139,27 @@ button, .button {
 .header__links a:not(:last-child) {
   margin-right: 32px;
 }
+.header__links a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
 .header__links a:hover {
   color: hsl(233deg, 26%, 24%);
+}
+.header__links a:hover::before {
+  opacity: 1;
+}
+.header__cta {
+  transition: opacity 200ms ease-in-out;
+}
+.header__cta:hover {
+  opacity: 0.75;
 }/*# sourceMappingURL=style.css.map */
