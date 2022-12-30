@@ -91,13 +91,40 @@ body.noscroll {
   overflow: hidden;
 }
 
+h1, h2, h3 {
+  margin-top: 0;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
 }
 
 .container {
-  padding-left: 1.5rem;
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+.container--pall {
+  padding: 2.25rem 1.5rem;
+}
+.container--py {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.container--px {
   padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.container--pt {
+  padding-top: 2.25rem;
+}
+.container--pr {
+  padding-right: 1.5rem;
+}
+.container--pb {
+  padding-bottom: 2.25rem;
+}
+.container--pl {
+  padding-left: 1.5rem;
 }
 
 .flex {
@@ -121,6 +148,10 @@ button, .button {
   cursor: pointer;
   color: hsl(0deg, 0%, 100%);
   font-size: 0.875rem;
+  transition: opacity 200ms ease-in-out;
+}
+button:hover, .button:hover {
+  opacity: 0.75;
 }
 
 @media (max-width: 39.9375em) {
@@ -204,12 +235,6 @@ button, .button {
 .header__links a:hover::before {
   opacity: 1;
 }
-.header__cta {
-  transition: opacity 200ms ease-in-out;
-}
-.header__cta:hover {
-  opacity: 0.75;
-}
 .header__menu {
   position: absolute;
   width: calc(100% - 3rem);
@@ -227,4 +252,82 @@ button, .button {
   text-align: center;
   font-size: 1.125rem;
   font-weight: 400;
+}
+
+.hero {
+  background-color: hsl(0deg, 0%, 98%);
+}
+@media (min-width: 64em) {
+  .hero .container {
+    display: flex;
+    align-items: center;
+  }
+}
+.hero__image {
+  position: relative;
+  min-height: 19.5rem;
+  background-image: url("../../images/bg-intro-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media (min-width: 64em) {
+  .hero__image {
+    height: 41rem;
+    flex: 3;
+    order: 2;
+    background-image: none;
+  }
+}
+.hero__image::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../images/bg-intro-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.hero__image::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../images/image-mockups.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.hero__text {
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 2;
+    order: 1;
+    text-align: left;
+  }
+}
+.hero__text h1 {
+  color: hsl(233deg, 26%, 24%);
+  font-size: 2.31rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 64em) {
+  .hero__text h1 {
+    font-size: 3.25rem;
+  }
+}
+.hero__text p {
+  color: hsl(233deg, 8%, 62%);
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+@media (min-width: 64em) {
+  .hero__text p {
+    font-size: 1.125rem;
+  }
 }/*# sourceMappingURL=style.css.map */

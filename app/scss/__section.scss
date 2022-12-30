@@ -1,0 +1,88 @@
+.hero {
+  background-color: $veryLightGray;
+
+  .container {
+    @include breakpoints-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-height: 19.5rem;
+    background-image: url('../../images/bg-intro-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include breakpoints-up(large) {
+      height: 41rem;
+      flex: 3;
+      order: 2;
+      background-image: none;
+      // background-image: url('../../images/bg-intro-desktop.svg');
+      // background-position: left center;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url('../../images/bg-intro-desktop.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      // @include breakpoints-up(large) {
+      //   width: 150%;
+      //   background-size: 122%;
+      //   background-position: 0% 83%;
+      // }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url('../../images/image-mockups.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include breakpoints-up(large) {
+      flex: 2;
+      order: 1;
+      text-align: left;
+    }
+
+    h1 {
+      color: $darkBlue;
+      font-size: 2.31rem;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+
+      @include breakpoints-up(large) {
+        font-size: $font-xlg;
+      }
+    }
+
+    p {
+      color: $grayBlue;
+      line-height: 1.5;
+      margin-bottom: 2.25rem;
+
+      @include breakpoints-up(large) {
+        font-size: $font-med;
+      }
+    }
+  }
+}
