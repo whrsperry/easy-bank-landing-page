@@ -14,10 +14,20 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   font-family: 'Public Sans', sans-serif;
+
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
 a, a:visited, a:hover {
   text-decoration: none;
+}
+
+// Mobile Spacing
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 // Flexbox
