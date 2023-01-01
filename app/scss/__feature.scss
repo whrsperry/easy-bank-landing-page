@@ -1,5 +1,8 @@
-.feature {
+.features {
   background-color: $lightGrayBlue;
+}
+
+.feature {
   text-align: center;
 
   @include breakpoints-up(medium) {
