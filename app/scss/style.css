@@ -271,6 +271,12 @@ button:hover, .button:hover {
   background-repeat: no-repeat;
   background-position: center center;
 }
+@media (min-width: 40em) {
+  .hero__image {
+    min-height: 25rem;
+    background-position: center 60%;
+  }
+}
 @media (min-width: 64em) {
   .hero__image {
     height: 41rem;
@@ -282,12 +288,19 @@ button:hover, .button:hover {
 .hero__image::before {
   content: "";
   position: absolute;
-  height: 100%;
   width: 100%;
-  background-image: url("../../images/bg-intro-desktop.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
+}
+@media (min-width: 64em) {
+  .hero__image::before {
+    width: 150%;
+    height: 100%;
+    background-image: url("../../images/bg-intro-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 122%;
+    background-position: 0% 83%;
+  }
 }
 .hero__image::after {
   content: "";
@@ -298,6 +311,20 @@ button:hover, .button:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+@media (min-width: 40em) {
+  .hero__image::after {
+    background-size: 52%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image::after {
+    width: 120%;
+    height: 122%;
+    background-size: 94%;
+    background-position: center 150%;
+    left: 22%;
+  }
 }
 .hero__text {
   text-align: center;
