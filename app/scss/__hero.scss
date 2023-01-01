@@ -31,12 +31,10 @@
     }
 
     &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      
       
       @include breakpoints-up(large) {
+        content: "";
+        position: absolute;
         width: 150%;
         height: 100%;
         background-image: url('../../images/bg-intro-desktop.svg');
@@ -79,28 +77,6 @@
       flex: 2;
       order: 1;
       text-align: left;
-    }
-
-    h1 {
-      color: $darkBlue;
-      font-size: 2.31rem;
-      font-weight: 300;
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
-
-      @include breakpoints-up(large) {
-        font-size: $font-xlg;
-      }
-    }
-
-    p {
-      color: $grayBlue;
-      line-height: 1.5;
-      margin-bottom: 2.25rem;
-
-      @include breakpoints-up(large) {
-        font-size: $font-med;
-      }
     }
   }
 }

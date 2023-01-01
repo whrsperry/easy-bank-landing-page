@@ -14,14 +14,48 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   font-family: 'Public Sans', sans-serif;
+  min-height: 300vh;
 
   &.noscroll {
     overflow: hidden;
   }
 }
 
+// Text 
 h1, h2, h3 {
   margin-top: 0;
+  color: $darkBlue;
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2.31rem;
+  margin-bottom: 1.5rem;
+
+  @include breakpoints-up(large) {
+    font-size: $font-xlg;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+
+  @include breakpoints-up(large) {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  color: $grayBlue;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+
+  @include breakpoints-up(large) {
+    font-size: $font-med;
+  }
 }
 
 a, a:visited, a:hover {
@@ -34,12 +68,22 @@ a, a:visited, a:hover {
   margin: 0 auto;
 
   &--pall {
-    padding: 2.25rem 1.5rem;
+    padding: 4.375rem 1.5rem;
+
+    @include breakpoints-up(large) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 
   &--py {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+
+    @include breakpoints-up(large) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 
   &--px {
@@ -48,7 +92,11 @@ a, a:visited, a:hover {
   }
 
   &--pt {
-    padding-top: 2.25rem;
+    padding-top: 4.375rem;
+
+    @include breakpoints-up(large) {
+      padding-top: 6rem;
+    }
   }
 
   &--pr {
@@ -56,7 +104,11 @@ a, a:visited, a:hover {
   }
 
   &--pb {
-    padding-bottom: 2.25rem;
+    padding-bottom: 4.375rem;
+
+    @include breakpoints-up(large) {
+      padding-bottom: 6rem;
+    }
   }
 
   &--pl {
