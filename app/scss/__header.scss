@@ -1,5 +1,4 @@
 .header {
-
   // Hamburger Open Styes
   &.open {
 
@@ -100,11 +99,12 @@
     position: absolute;
     width: calc(100% - 3rem);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -8%);
     margin-top: 1.5rem;
     background-color: $white;
     padding: 1.625rem;
     border-radius: 5px;
+    z-index: 2;
 
     a {
       display: block;
