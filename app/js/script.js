@@ -25,13 +25,13 @@ btnHamburger.addEventListener('click', () => {
   }
 });
 
-linkItem.forEach((item) => {
+linkItem.forEach((item) => { // Link jump page functionality
   item.addEventListener('click', () => {
     body.classList.remove('noscroll');
     header.classList.remove('open');
-    fadeElements.forEach(function(element){
+    fadeElements.forEach((element) => {
       element.classList.remove('fade-in');
       element.classList.add('fade-out');
-    })
-  })
-})
+    });
+  });
+});
